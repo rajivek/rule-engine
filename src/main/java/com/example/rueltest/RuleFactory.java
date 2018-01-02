@@ -16,10 +16,11 @@ public class RuleFactory {
     public Rule getRule(String action) {
 
         Logic bean = (Logic) applicationContext.getBean(action);
-                Rule rule = applicationContext.getBean(Rule.class);
-        rule.setName(action);
 
+        Rule rule = applicationContext.getBean(Rule.class);
         rule.setLogic(bean);
+
+
         return rule;
 
 
